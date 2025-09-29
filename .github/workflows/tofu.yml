@@ -1,12 +1,11 @@
 name: OpenTofu OCI Provisioning
 
 on:
-    push:
-        paths:
-            - "challenge3/**"
     pull_request:
         paths:
             - "challenge3/**"
+        branches: 
+            - main
 
 jobs:
     opentofu:
@@ -22,6 +21,8 @@ jobs:
 
             - name: Setup OpenTofu
               uses: opentofu/setup-opentofu@v1
+              with:
+                tofu_wrapper: false
 
             - name: Tofu Init
               run: tofu init
@@ -30,7 +31,7 @@ jobs:
               run: tofu validate
 
             - name: Tofu Plan
-              run: tofu plan -out=tfplan
+              run: tofu plan
 
             - name: Tofu Apply
               if: github.ref == 'refs/heads/main'
