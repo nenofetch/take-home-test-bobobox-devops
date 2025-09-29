@@ -1,0 +1,7 @@
+# Ignore state & local files
+*.tfstate
+*.tfstate.*
+.terraform/
+*.tfvars
+*.pem
+*.key
