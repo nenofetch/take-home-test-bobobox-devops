@@ -40,4 +40,5 @@ Why this CI choice?
 
 - Node_Exporter Prometheus: for metric collection such as cpu/memory usage, on this machine it was installed Prometheus Node_Exporter as on the cloud-init.sh file, and for the port is using 9100
 
-## 5)
+## 5) Security
+- Firewalld: for the simple security on this case it implement on firewalld on the machine with specific port open/expose to the public and also on security list on VCN 
